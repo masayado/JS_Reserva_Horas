@@ -4,43 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio: Reserva de Horas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <script src="assets/js/script.js"></script>
 
 <div class="contenedor-formulario">
-<form class="formulario" name="formulario_registro" onsubmit="return validar();">
+
+    <div class="wrap">
+        <form class="formulario" name="formulario_registro" onsubmit="return validar();">
 
     <h3>Reserva de Horas Médicas</h3>
+
+    <div class="input-group">
+        <label for="rut" id="labels">ingrese rut del paciente</label>
+        <input type="text" id="rut" name="rut" placeholder="Rut" class="inputcss">
+    </div>
     
     <div class="input-group">
+            <label for="nombres" id="labels">ingrese ambos nombres del paciente</label>
             <input type="text" id="nombres" name="nombres" placeholder="Nombres" class="inputcss">
-            <label for="nombres">Nombres:</label>
         </div>
 
     <div class="input-group">
+        <label for="apellidos" id="labels">ingrese ambos apellidos del paciente</label>
         <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="inputcss">
-        <label for="apellidos">Apellidos:</label>
     </div>
 
     <div class="input-group">
-        <input type="text" id="rut" name="rut" placeholder="Rut" class="inputcss">
-        <label for="rut">Rut:</label>
-    </div>
-
-    <div class="input-group">
+        <label for="edad" id="labels">ingrese edad del paciente</label>
         <input type="text" id="edad" name="edad" placeholder="Edad" class="inputcss">
-        <label for="edad">Edad:</label>
     </div>
 
     <div class="input-group">
+        <label for="correo" id="labels">ingrese correo electrónico</label>
         <input type="email" id="correo" name="correo" placeholder="Correo" class="inputcss">
-        <label for="correo">Correo:</label>
     </div>
 
     <div class="input-group">
+        <label for="especialidad" id="labels">seleccione una especialidad</label>
         <select id="especialidad" name="especialidad">
             <option value="cardiologia">Cardiología</option>
             <option value="dermatologia">Dermatología</option>
@@ -53,15 +56,15 @@
             <option value="neurologia">Oftalmología</option>
             <option value="neurologia">Pediatría</option>
           </select>
-        <label for="especialidad">Especialidad:</label>
     </div>
 
     <div class="input-group">
-        <input type="text id="fecha" name="fecha" placeholder="dd/mm/aaaa" class="inputcss">
-        <label for="fecha">Fecha:</label>
+        <label for="fecha" id="labels">fecha día de atención</label>
+        <input type="text" id="fecha" name="fecha" placeholder="dd/mm/aaaa" class="inputcss">
     </div>
     
     <div class="input-group">
+        <label for="horas" id="labels">horas disponibles</label>
         <select id="horas" name="horas">
             <option value="ocho">8:00</option>
             <option value="nueve">9:00</option>
@@ -74,13 +77,13 @@
             <option value="dieciseis">16:00</option>
             <option value="diecisiete">17:00</option>
           </select>
-        <label for="horas">Especialidad:</label>
+    </div>
+    <input type="submit" value="reservar" class="btn-enviar" id="btn-submit">
+        </form> 
     </div>
 
-    <input type="submit" value="Reservar" class="btn-enviar" id="btn-submit">
-    
 </div>
-</form> 
+
     
 </body>
 </html>
