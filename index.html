@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio: Reserva de Horas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<script src="assets/js/script.js"></script>
+
+<div class="contenedor-formulario">
+<form class="formulario" name="formulario_registro" onsubmit="return validar();">
+
+    <h3>Reserva de Horas Médicas</h3>
+    
+    <div class="input-group">
+            <input type="text" id="nombres" name="nombres" placeholder="Nombres" class="inputcss">
+            <label for="nombres">Nombres:</label>
+        </div>
+
+    <div class="input-group">
+        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="inputcss">
+        <label for="apellidos">Apellidos:</label>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="rut" name="rut" placeholder="Rut" class="inputcss">
+        <label for="rut">Rut:</label>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="edad" name="edad" placeholder="Edad" class="inputcss">
+        <label for="edad">Edad:</label>
+    </div>
+
+    <div class="input-group">
+        <input type="email" id="correo" name="correo" placeholder="Correo" class="inputcss">
+        <label for="correo">Correo:</label>
+    </div>
+
+    <div class="input-group">
+        <select id="especialidad" name="especialidad">
+            <option value="cardiologia">Cardiología</option>
+            <option value="dermatologia">Dermatología</option>
+            <option value="endocrinologo">Endocrinología</option>
+            <option value="fonoaudiologia">Fonoaudiología</option>
+            <option value="gastro">Gastroenterología</option>
+            <option value="ginecologia">Ginecología</option>
+            <option value="medicina_gral">Medicina General</option>
+            <option value="neurologia">Neurología</option>
+            <option value="neurologia">Oftalmología</option>
+            <option value="neurologia">Pediatría</option>
+          </select>
+        <label for="especialidad">Especialidad:</label>
+    </div>
+
+    <div class="input-group">
+        <input type="text id="fecha" name="fecha" placeholder="dd/mm/aaaa" class="inputcss">
+        <label for="fecha">Fecha:</label>
+    </div>
+    
+    <div class="input-group">
+        <select id="horas" name="horas">
+            <option value="ocho">8:00</option>
+            <option value="nueve">9:00</option>
+            <option value="diez">10:00</option>
+            <option value="once">11:00</option>
+            <option value="doce">12:00</option>
+            <option value="trece">13:00</option>
+            <option value="catorce">14:00</option>
+            <option value="quince">15:00</option>
+            <option value="dieciseis">16:00</option>
+            <option value="diecisiete">17:00</option>
+          </select>
+        <label for="horas">Especialidad:</label>
+    </div>
+
+    <input type="submit" value="Reservar" class="btn-enviar" id="btn-submit">
+    
+</div>
+</form> 
+    
+</body>
+</html>
