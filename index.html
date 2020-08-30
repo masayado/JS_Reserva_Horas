@@ -13,7 +13,7 @@
 
     <div class="wrap">
 
-    <form action="" method="POST" id="form" name="formulario_registro">
+    <form action="" method="GET" id="form" name="formulario_registro">
 
     <h3>Reserva de Horas Médicas</h3>
 
@@ -46,16 +46,16 @@
         <label for="especialidad" id="labels">seleccione una especialidad</label>
         <select id="especialidad" name="especialidad">
             <option value="0" selected disabled>Seleccione especialidad</option>
-            <option value="1">Cardiología</option>
-            <option value="2">Dermatología</option>
-            <option value="3">Endocrinología</option>
-            <option value="4">Fonoaudiología</option>
-            <option value="5">Gastroenterología</option>
-            <option value="6">Ginecología</option>
-            <option value="7">Medicina General</option>
-            <option value="8">Neurología</option>
-            <option value="9">Oftalmología</option>
-            <option value="10">Pediatría</option>
+            <option value="Cardiologia">Cardiología</option>
+            <option value="Dermatologia">Dermatología</option>
+            <option value="Endocrinologia">Endocrinología</option>
+            <option value="Fonoaudiologia">Fonoaudiología</option>
+            <option value="Gastroenterologia">Gastroenterología</option>
+            <option value="Ginecologia">Ginecología</option>
+            <option value="Medicina General">Medicina General</option>
+            <option value="Neurologia">Neurología</option>
+            <option value="Oftalmologia">Oftalmología</option>
+            <option value="Pediatria">Pediatría</option>
           </select>
     </div>
 
@@ -68,20 +68,20 @@
         <label for="horas" id="labels">horas disponibles</label>
         <select id="horas" name="horas">
             <option value="0" selected disabled="true">Seleccione hora de atención</option>
-            <option value="1">8:00</option>
-            <option value="2">9:00</option>
-            <option value="3">10:00</option>
-            <option value="4">11:00</option>
-            <option value="5">12:00</option>
-            <option value="6">13:00</option>
-            <option value="7">14:00</option>
-            <option value="8">15:00</option>
-            <option value="9">16:00</option>
-            <option value="10">17:00</option>
+            <option value="8:00">8:00</option>
+            <option value="9:00">9:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
           </select> 
     </div>
     <input type="submit" value="reservar" class="btn-enviar" id="boton_reserva">
-    <div class="reserva-exitosa" id="reserva-exitosa"><p class="reservado" id="reservado"></p></div>
+    <div class="reserva-exitosa" id="reserva"><p class="reservado" id="reservado"></p></div>
 
     </form> 
     

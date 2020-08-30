@@ -1,22 +1,51 @@
-//variables
-
-//formulario
+//var formulario
 var form = document.getElementById("form");
 
-//inputs 
-
-var rut = document.getElementById("rut").value;
-var nombres = document.getElementById("nombres").value;
-var apellidos = document.getElementById("apellidos").value;
-var edad = document.getElementById("edad").value;
-var correo = document.getElementById("correo").value;
-var especialidad = document.getElementById("especialidad").value;
-var fecha = document.getElementById("fecha").value;
-var hora = document.getElementById("horas").value;
-
-form.addEventListener("submit", e => {
+form.addEventListener("submit", e=>{
+    var rut = document.getElementById("rut").value;
+    var nombres = document.getElementById("nombres").value;
+    var apellidos = document.getElementById("apellidos").value;
+    var edad = document.getElementById("edad").value;
+    var correo = document.getElementById("correo").value;
+    var especialidad = document.getElementById("especialidad").value;
+    var fecha = document.getElementById("fecha").value;
+    var hora = document.getElementById("horas").value;
+    var reserva = document.getElementById("reserva").value;
+    
     e.preventDefault();
-    validacionRut();
+
+    if (validacionRut()==false){
+        return false;
+    }
+    else if (validacionNombres()==false){
+        return false;
+    }
+    else if (validacionApellidos()==false){
+        return false;
+    }
+    else if (validacionEdad()==false){
+        return false;
+    }
+    else if (validacionCorreo()==false){
+        return false;
+    }
+    else if(especialidad=="0"){
+        alert("Por favor, seleccione especialidad médica.");
+    }
+    else if (validacionFecha()==false){
+        return false;
+    }
+    else if (hora=="0"){
+        alert("Por favor, seleccione hora de atención disponible.")
+    }
+    else{
+        alert(`Estimado(a) ${nombres} ${apellidos},\n su hora para ${especialidad} ha sido reservada para el
+        día ${fecha} a las ${hora}.\nAdemás, se le envió un mensaje a su correo ${correo} con el detalle de su cita.\n¡Gracias por preferirnos!`);
+    
+    limpiarForm();
+
+    }
+
 });
 
 //VALIDACIONES
@@ -35,7 +64,8 @@ validacionRut = () => {
             return true;
         }
         else{
-            alert("El rut debe ser ingresado con puntos y guión.\nFormato 11.111.111-1")
+            alert("Formato inválido. El rut debe ser ingresado con números, puntos y guión.\nFormato 11.111.111-1")
+            return false;
         }
 };
 
@@ -43,7 +73,7 @@ validacionRut = () => {
 
 validacionNombres = () => {
     var nombres = document.getElementById("nombres").value;
-    var regExNombres = /[a-zA-Z ]{3,35}/gm;
+    var regExNombres = /^[a-zA-Z ]{3,35}$/gm;
         if(nombres === ""){
             alert("Por favor, ingrese los nombres del paciente.");
             return false;
@@ -54,6 +84,7 @@ validacionNombres = () => {
         }
         else{
             alert("Nombres inválidos. Debe ingresar sólo letras")
+            return false;
         }
 };
 
@@ -61,7 +92,7 @@ validacionNombres = () => {
 
 validacionApellidos = () => {
     var apellidos = document.getElementById("apellidos").value;
-    var regExApellidos = /[a-zA-Z ]{3,35}/gm;
+    var regExApellidos = /^[a-zA-Z ]{3,35}$/gm;
         if(apellidos === ""){
             alert("Por favor, ingrese los apellidos del paciente.");
             return false;
@@ -72,6 +103,7 @@ validacionApellidos = () => {
         }
         else{
             alert("Apellidos inválidos. Debe ingresar sólo letras")
+            return false;
         }
 };
 
@@ -90,6 +122,7 @@ validacionEdad = () => {
         }
         else{
             alert("Edad inválida. Debe ingresar sólo números")
+            return false;
         }
 };
 
@@ -107,20 +140,9 @@ validacionCorreo = () => {
             return true;
         }
         else{
-            alert("Correo inválido. Ingrese formato de correo electrónico válido")
+            alert("Correo inválido. Ingrese formato de correo electrónico válido");
+            return false;
         }
-};
-
-//Validacion especialidad
-
-validacionEspecialidad = () => {
-    var especialidad = document.getElementById("especialidad").value;
-    if (especialidad.value === "0"){
-        alert ("Por favor, escoga especialidad médica")
-    }
-    else (especialidad.value != "0"){
-        console.log(especialidad);
-    }
 };
 
 //Validacion fecha de atención
@@ -129,7 +151,7 @@ validacionFecha = () => {
     var fecha = document.getElementById("fecha").value;
     var regExFecha = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
         if (fecha === ""){
-            alert ("Por favor, ingrese la fecha en la cual desea reservar su hora")
+            alert ("Por favor, ingrese la fecha en la cual desea reservar su hora");
             return false;
         }
         else if(fecha.match(regExFecha)){
@@ -137,42 +159,13 @@ validacionFecha = () => {
             return true;
         }
         else {
-            alert ("Fecha inválida. Ingrese fecha con forma dd/mm/aaaa\nEjemplo 13/11/2020")
+            alert ("Fecha inválida. Ingrese fecha con forma dd/mm/aaaa\nEjemplo 13/11/2020");
+            return false;
         }
 };
 
-//Validacion horas de atención
+//Resetear form
 
-validacionHoras = () => {
-    var hora = document.getElementById("horas").value;
-    if (hora.value === "0"){
-        alert ("Por favor, escoga hora de atención")
-    }
-    else (hora.value != "0"){
-        console.log(hora);
-    }
-};
-
-//limpiar inputs después de enviar formulario
-
-limpiarInputs = () => {
-
-var rut = document.getElementById("rut").value;
-var nombres = document.getElementById("nombres").value;
-var apellidos = document.getElementById("apellidos").value;
-var edad = document.getElementById("edad").value;
-var correo = document.getElementById("correo").value;
-var especialidad = document.getElementById("especialidad").value;
-var fecha = document.getElementById("fecha").value;
-var hora = document.getElementById("horas").value;
-
-rut.value="";
-nombres.value="";
-apellidos.value="";
-edad.value="";
-correo.value="";
-especialidad.value="0";
-fecha.value="";
-hora.value="0";
-
+limpiarForm = () => {
+    document.getElementById("form").reset();
 };
