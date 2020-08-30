@@ -29,6 +29,11 @@ body {
   margin: auto;
 }
 
+#formulario {
+  width: 100%;
+  margin: auto;
+}
+
 .input-group {
   position: relative;
   margin-bottom: 15px;
@@ -85,6 +90,15 @@ h3 {
   padding-top: 10px;
   padding-bottom: 10px;
   font-variant-caps: small-caps;
+}
+
+.reservado {
+  width: 90%;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  color: #1e1e1e;
+  padding-top: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<script src="assets/js/script.js"></script>
 
 <div class="contenedor-formulario">
 
     <div class="wrap">
-        <form class="formulario" name="formulario_registro" onsubmit="return validar();">
+
+    <form action="" method="POST" id="form" name="formulario_registro">
 
     <h3>Reserva de Horas Médicas</h3>
 
@@ -45,16 +45,17 @@
     <div class="input-group">
         <label for="especialidad" id="labels">seleccione una especialidad</label>
         <select id="especialidad" name="especialidad">
-            <option value="cardiologia">Cardiología</option>
-            <option value="dermatologia">Dermatología</option>
-            <option value="endocrinologo">Endocrinología</option>
-            <option value="fonoaudiologia">Fonoaudiología</option>
-            <option value="gastro">Gastroenterología</option>
-            <option value="ginecologia">Ginecología</option>
-            <option value="medicina_gral">Medicina General</option>
-            <option value="neurologia">Neurología</option>
-            <option value="neurologia">Oftalmología</option>
-            <option value="neurologia">Pediatría</option>
+            <option value="0" selected disabled>Seleccione especialidad</option>
+            <option value="1">Cardiología</option>
+            <option value="2">Dermatología</option>
+            <option value="3">Endocrinología</option>
+            <option value="4">Fonoaudiología</option>
+            <option value="5">Gastroenterología</option>
+            <option value="6">Ginecología</option>
+            <option value="7">Medicina General</option>
+            <option value="8">Neurología</option>
+            <option value="9">Oftalmología</option>
+            <option value="10">Pediatría</option>
           </select>
     </div>
 
@@ -66,24 +67,28 @@
     <div class="input-group">
         <label for="horas" id="labels">horas disponibles</label>
         <select id="horas" name="horas">
-            <option value="ocho">8:00</option>
-            <option value="nueve">9:00</option>
-            <option value="diez">10:00</option>
-            <option value="once">11:00</option>
-            <option value="doce">12:00</option>
-            <option value="trece">13:00</option>
-            <option value="catorce">14:00</option>
-            <option value="quince">15:00</option>
-            <option value="dieciseis">16:00</option>
-            <option value="diecisiete">17:00</option>
-          </select>
+            <option value="0" selected disabled="true">Seleccione hora de atención</option>
+            <option value="1">8:00</option>
+            <option value="2">9:00</option>
+            <option value="3">10:00</option>
+            <option value="4">11:00</option>
+            <option value="5">12:00</option>
+            <option value="6">13:00</option>
+            <option value="7">14:00</option>
+            <option value="8">15:00</option>
+            <option value="9">16:00</option>
+            <option value="10">17:00</option>
+          </select> 
     </div>
-    <input type="submit" value="reservar" class="btn-enviar" id="btn-submit">
-        </form> 
+    <input type="submit" value="reservar" class="btn-enviar" id="boton_reserva">
+    <div class="reserva-exitosa" id="reserva-exitosa"><p class="reservado" id="reservado"></p></div>
+
+    </form> 
+    
     </div>
 
 </div>
 
-    
+<script src="assets/js/script.js"></script>
 </body>
 </html>
