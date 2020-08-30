@@ -10,7 +10,7 @@ form.addEventListener("submit", e=>{
     var especialidad = document.getElementById("especialidad").value;
     var fecha = document.getElementById("fecha").value;
     var hora = document.getElementById("horas").value;
-    var reserva = document.getElementById("reserva").value;
+    var reserva = document.getElementById("reservado").value;
     
     e.preventDefault();
 
@@ -39,8 +39,8 @@ form.addEventListener("submit", e=>{
         alert("Por favor, seleccione hora de atención disponible.")
     }
     else{
-        alert(`Estimado(a) ${nombres} ${apellidos},\n su hora para ${especialidad} ha sido reservada para el
-        día ${fecha} a las ${hora}.\nAdemás, se le envió un mensaje a su correo ${correo} con el detalle de su cita.\n¡Gracias por preferirnos!`);
+        alert(`Estimado(a) ${nombres} ${apellidos}, su hora para ${especialidad} ha sido reservada para el
+        día ${fecha} a las ${hora}. Además, se le envió un mensaje a su correo ${correo} con el detalle de su cita. ¡Gracias por preferirnos!`);
     
     limpiarForm();
 
@@ -64,7 +64,7 @@ validacionRut = () => {
             return true;
         }
         else{
-            alert("Formato inválido. El rut debe ser ingresado con números, puntos y guión.\nFormato 11.111.111-1")
+            alert("Formato inválido. El rut debe ser ingresado con números, puntos y guión.\nEjemplo: 11.111.111-1")
             return false;
         }
 };
@@ -83,7 +83,7 @@ validacionNombres = () => {
             return true;
         }
         else{
-            alert("Nombres inválidos. Debe ingresar sólo letras")
+            alert("Nombres inválidos. Debe ingresar sólo letras.")
             return false;
         }
 };
@@ -102,7 +102,7 @@ validacionApellidos = () => {
             return true;
         }
         else{
-            alert("Apellidos inválidos. Debe ingresar sólo letras")
+            alert("Apellidos inválidos. Debe ingresar sólo letras.")
             return false;
         }
 };
@@ -121,7 +121,7 @@ validacionEdad = () => {
             return true;
         }
         else{
-            alert("Edad inválida. Debe ingresar sólo números")
+            alert("Edad inválida. Debe ingresar sólo números.")
             return false;
         }
 };
@@ -140,7 +140,7 @@ validacionCorreo = () => {
             return true;
         }
         else{
-            alert("Correo inválido. Ingrese formato de correo electrónico válido");
+            alert("Correo inválido. Ingrese formato de correo electrónico válido.");
             return false;
         }
 };
@@ -151,7 +151,7 @@ validacionFecha = () => {
     var fecha = document.getElementById("fecha").value;
     var regExFecha = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/;
         if (fecha === ""){
-            alert ("Por favor, ingrese la fecha en la cual desea reservar su hora");
+            alert ("Por favor, ingrese la fecha en la cual desea reservar su hora.");
             return false;
         }
         else if(fecha.match(regExFecha)){
@@ -159,7 +159,7 @@ validacionFecha = () => {
             return true;
         }
         else {
-            alert ("Fecha inválida. Ingrese fecha con forma dd/mm/aaaa\nEjemplo 13/11/2020");
+            alert ("Fecha inválida. Ingrese fecha con forma dd/mm/aaaa\nEjemplo: 13/11/2020.");
             return false;
         }
 };
